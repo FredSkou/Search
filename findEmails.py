@@ -3,9 +3,9 @@ import requests
 import re
 import html.parser
 
-def findEmails(url):
+def findEmails(url,file):
     #File to save Email
-    file_name = "email_list.txt"
+    file_name = file
     #Shit solution
     array = []
     # The Final Email
@@ -34,13 +34,6 @@ def findEmails(url):
     except:
         print("Cant Acess:", website)
 
-def read():
-    filename = "link.txt"
-    with open(filename,"r") as file:
-        print(f"Starting Email Search in {filename}!")
-        lines = file.readlines()
-        for line in lines:
-            findEmails(line)
-    print("Email Search Complete!")
 
-read()
+
+#read()
