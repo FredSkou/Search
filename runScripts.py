@@ -1,12 +1,15 @@
 import searchGoogleScript
 import findEmails
 
-def runScrips(file_name, emailFile):
-    #New Emails
+def runScrips(keyword,numberOfLinks,file_name, emailFile):
+
+    # Start Seaching On Google
+    searchGoogleScript.searchGoogle(keyword,numberOfLinks,file_name)
+
+    # Count the Starting Amount of Emails
+
+    # New Emails
     email_counter = 0
-
-    searchGoogleScript.searchGoogle("CRM",20,file_name)
-
     try:
         with open(emailFile,"r") as emailfile:
             lines = emailfile.readlines()
@@ -15,22 +18,22 @@ def runScrips(file_name, emailFile):
     except:
         print("No file")
 
-
+    # Run findEmails per Link Found
     try:
         print("Getting Emails From Links!")
         with open(file_name) as file:
             for lines in file.readlines():
                 findEmails.findEmails(lines,emailFile)
             file.close()
-        print("Emails Found and Saved To File: ",emailFile)
+        print("Emails Found and Saved To File:",emailFile)
         with open(emailFile,"r") as file:
             lines = file.readlines()
             print("New Emails Found:",len(lines)-email_counter)
             email_counter =len(lines)
             file.close()
-        print("Total Email:", email_counter)
+        print("Total Emails:", email_counter)
     except:
         print("Cant Access File")
 
 
-runScrips("GoogleLinks,txt","Email.txt")
+runScrips("Cat",20,"GoogleLinks,txt","CatEmail.txt")

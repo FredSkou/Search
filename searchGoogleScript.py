@@ -25,6 +25,7 @@ def searchGoogle(searchPhrase,hits,file):
     if hitArray:
         with open(file_name,"w") as file:
             print(f"Writing to File {file_name}")
+
             for entry in hitArray:
 
                 if ".com" in entry:
