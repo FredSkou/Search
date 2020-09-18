@@ -1,0 +1,1 @@
+Make it so findEmails() accepts the whole file, instead of having to call it multiple times from runScripts.

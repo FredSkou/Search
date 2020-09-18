@@ -19,7 +19,6 @@ def findEmails(url,file):
         soup = BeautifulSoup(response.text,"html.parser")
         # Find all the links in the Html
         links = soup.find_all("a")
-
         for link in links:
             array.append(link.get("href"))
         for i in (e for e in array if e is not None):
@@ -34,6 +33,3 @@ def findEmails(url,file):
     except:
         print("Cant Acess:", website)
 
-
-
-#read()

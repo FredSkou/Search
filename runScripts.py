@@ -2,12 +2,9 @@ import searchGoogleScript
 import findEmails
 
 def runScrips(keyword,numberOfLinks,file_name, emailFile):
-
     # Start Seaching On Google
     searchGoogleScript.searchGoogle(keyword,numberOfLinks,file_name)
-
     # Count the Starting Amount of Emails
-
     # New Emails
     email_counter = 0
     try:
@@ -17,7 +14,6 @@ def runScrips(keyword,numberOfLinks,file_name, emailFile):
             emailfile.close()
     except:
         print("No file")
-
     # Run findEmails per Link Found
     try:
         print("Getting Emails From Links!")
@@ -36,4 +32,4 @@ def runScrips(keyword,numberOfLinks,file_name, emailFile):
         print("Cant Access File")
 
 
-runScrips("Cat",20,"GoogleLinks,txt","CatEmail.txt")
+runScrips("Immanuel Storm Lokzinsky",15,"GoogleLinks,txt","Emails.txt")

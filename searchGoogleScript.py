@@ -1,8 +1,14 @@
 import googlesearch
-
+# import google - Has To Be Imported and then removed again
 def searchGoogle(searchPhrase,hits,file):
     hitArray =[]
     file_name = file
+    filterArray = []
+    # Add Terms We Dont Want From filterWords.txt
+    with open("filterWords.txt","r") as filter:
+        for lines in filter.readlines():
+            filterArray.append(lines.strip("\n"))
+        filter.close()
     try:
         from googlesearch import search
     except ImportError:
@@ -12,16 +18,11 @@ def searchGoogle(searchPhrase,hits,file):
     print("Starting Google Search For:",query)
     for hit in search(query, tld="dk", num=10, stop=hits, pause=2):
         # Dont Include these Websites
-        if "wikipedia" in hit:
-            continue
-        if "news" in hit:
-            continue
-        if "view" in hit:
-            continue
-        if "search" in hit:
-            continue
-        else:
-            hitArray.append(hit)
+        for word in filterArray:
+            if word in hit:
+                continue
+            else:
+                hitArray.append(hit)
     if hitArray:
         with open(file_name,"w") as file:
             print(f"Writing to File {file_name}")
