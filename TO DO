@@ -1,1 +1,6 @@
-Make it so findEmails() accepts the whole file, instead of having to call it multiple times from runScripts.
+DONE - Make it so findEmails() accepts the whole file, instead of having to call it multiple times from runScripts. DONE
+DONE - Remove Duplicates from Link List. Just make sure it doesnt write but saves it to a list before we write to file.
+DONE - Progress bar - see how far the script is.
+DONE - Make the Filter actually work!
+Make it so if the entry_short fails, dont try the rest
+Make is so if we find an Email in entry_short or on the others, we dont look further.
