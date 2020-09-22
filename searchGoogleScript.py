@@ -43,6 +43,8 @@ def searchGoogle(searchPhrase,hits,linkfile):
                 linkArray.append(entry_short + "\n")
                 linkArray.append(kontakt + "\n")
                 linkArray.append(kontaktOs + "\n")
+            else:
+                linkArray.append(entry)
         with open(file_name,"w") as file:
             linkArraySorted = list(dict.fromkeys(linkArray))
             print(f"Writing to File {file_name}")
@@ -50,5 +52,5 @@ def searchGoogle(searchPhrase,hits,linkfile):
                 file.writelines(link)
     else:
         print("No Results")
-    print("Search Complete! Results: ",len(linkArray))
+    print("Search Complete! Results: ",len(linkArraySorted))
 

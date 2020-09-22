@@ -1,6 +1,7 @@
 import searchGoogleScript
 import findEmails
 
+
 def runScrips(keyword,numberOfLinks,link_file, emailFile):
     # Start Seaching On Google
     searchGoogleScript.searchGoogle(keyword,numberOfLinks,link_file)
@@ -28,4 +29,5 @@ def runScrips(keyword,numberOfLinks,link_file, emailFile):
     except:
         print("Cant Access File")
 
-runScrips("CRM",100,"GoogleLinks.txt","CRM.txt")
+
+runScrips("ERP",10,"GoogleLinks.txt","CRM.txt")
