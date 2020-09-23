@@ -28,6 +28,11 @@ def runScrips(keyword,numberOfLinks,link_file, emailFile):
         print("Total Emails:", email_counter)
     except:
         print("Cant Access File")
+def runIt():
+    with open("searchTags.txt","r") as file:
+        for tag in file.readlines():
+            tag = tag.strip("\n")
+            runScrips(tag,10,"Links/"+tag+"-Links.txt","Emails/"+tag+"-Emails.txt")
 
 
-runScrips("ERP",10,"GoogleLinks.txt","CRM.txt")
+runIt()

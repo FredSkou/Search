@@ -6,10 +6,14 @@ def searchGoogle(searchPhrase,hits,linkfile):
     # Link List to remove Duplicates:
     linkArray = []
     # Add Terms We Dont Want From filterWords.txt
-    with open("filterWords.txt","r") as filter:
+    with open("Filters/filterWords.txt","r") as filter:
         for lines in filter.readlines():
             filterArray.append(lines.strip("\n"))
         filter.close()
+    with open("Filters/brokenLinks.txt","r") as broken:
+        for lines in broken.readlines():
+            filterArray.append(lines.strip("\n"))
+        broken.close()
     try:
         from googlesearch import search
     except ImportError:

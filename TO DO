@@ -2,6 +2,8 @@ TO DO:
 Make it so if the entry_short fails, dont try the rest
 Make is so if we find an Email in entry_short or on the others, we dont look further.
 Make broken links save to another file and then we add those files to the filter check in findEmails.
+Make it possible to add tags from website
+Make it so you can "clean up" the different text files once in a while. To make sure there arent to many duplicates.
 
 
 
@@ -12,6 +14,7 @@ Make broken links save to another file and then we add those files to the filter
 
 DONE THINGS
 
+DONE - Make it so that runScripts takes an array
 DONE - Make it so findEmails() accepts the whole file, instead of having to call it multiple times from runScripts. DONE
 DONE - Remove Duplicates from Link List. Just make sure it doesnt write but saves it to a list before we write to file.
 DONE - Progress bar - see how far the script is.
