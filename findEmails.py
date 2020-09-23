@@ -36,8 +36,8 @@ def findEmails(emailfile,link_file):
             # Find all the links in the Html
             links = soup.find_all("a")
             # Progress Update
-            percent_done = round((progress_counter / len(linkArray)) * 100)
             progress_counter += 1
+            percent_done = round((progress_counter / len(linkArray)) * 100)
             print("Links Searched:", progress_counter, "/", len(linkArray),",",percent_done,"%")
             for link in links:
                 array.append(link.get("href"))

@@ -1,7 +1,6 @@
 import searchGoogleScript
 import findEmails
 
-
 def runScrips(keyword,numberOfLinks,link_file, emailFile):
     # Start Seaching On Google
     searchGoogleScript.searchGoogle(keyword,numberOfLinks,link_file)
