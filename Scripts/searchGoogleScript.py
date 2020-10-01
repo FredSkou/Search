@@ -1,16 +1,17 @@
 import googlesearch
-# import google - Has To Be Imported and then removed again
+#import google
+#Google Has To Be Imported and then removed again
 def searchGoogle(searchPhrase,hits,linkfile):
     file_name = linkfile
     filterArray = []
     # Link List to remove Duplicates:
     linkArray = []
     # Add Terms We Dont Want From filterWords.txt
-    with open("Filters/filterWords.txt","r") as filter:
+    with open("Filters/filterWords.txt", "r") as filter:
         for lines in filter.readlines():
             filterArray.append(lines.strip("\n"))
         filter.close()
-    with open("Filters/brokenLinks.txt","r") as broken:
+    with open("Filters/brokenLinks.txt", "r") as broken:
         for lines in broken.readlines():
             filterArray.append(lines.strip("\n"))
         broken.close()
@@ -54,7 +55,15 @@ def searchGoogle(searchPhrase,hits,linkfile):
             print(f"Writing to File {file_name}")
             for link in linkArraySorted:
                 file.writelines(link)
+
     else:
         print("No Results")
     print("Search Complete! Results: ",len(linkArraySorted))
+    returnResults(linkArraySorted)
+    return len(linkArraySorted)
+
+def returnResults(array):
+    results = len(array)
+    return results
+
 

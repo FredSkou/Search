@@ -22,7 +22,7 @@ def findEmails(emailfile,link_file):
         for lines in file.readlines():
             linkArray.append(lines)
         file.close()
-    with open("Filters/brokenLinks.txt","r") as filter:
+    with open("Filters/brokenLinks.txt", "r") as filter:
         brokenlinks = [line for line in filter.readlines()]
         filter.close()
     # Filter out more broken Links
@@ -58,7 +58,7 @@ def findEmails(emailfile,link_file):
             file.writelines(mail + "\n")
         file.close()
     # Add Broken Links to Filter.
-    with open("Filters/brokenLinks.txt","a") as file:
+    with open("Filters/brokenLinks.txt", "a") as file:
         for link in brokenLinks:
             link = link[12:]
             file.writelines(link)

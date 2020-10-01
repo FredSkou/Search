@@ -1,15 +1,20 @@
 TO DO:
-Make it so if the entry_short fails, dont try the rest
-Make is so if we find an Email in entry_short or on the others, we dont look further.
+Make it so if the entry_short fails, don't try the rest
+Make is so if we find an Email in entry_short or on the others, we don't look further.
 Make it possible to add tags from our website
 Make it so you can "clean up" the different text files once in a while. To make sure there aren't to many duplicates.
-Make A sript that sends an Email to all the Emails.
-Make a Log
-Make a Time Decorator - Mostly For Testing
-Make it so you can search on just 1 URL - Mostly For Future Perposes.
+Make A script that sends an Email to all the Emails. Maybe Use the Plugin Isak Found
+Make it so you can search on just 1 URL - Mostly For The Future.
 Make a new Script that takes Links it finds and then looks for emails and links there and then uses those links etc. etc....
 Make it more high coupling - low cohesion.
 More methods, less long scripts.
+Set up my decorators - Timer(For Test), Log(And Maybe DateTime)
+Test if Generators would be faster
+Get a better way of identifying Emails, @ is not good enough
+
+
+
+
 
 DONE THINGS:
 DONE - Make broken links save to another file and then we add those files to the filter check in findEmails.

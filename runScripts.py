@@ -1,9 +1,11 @@
-import searchGoogleScript
-import findEmails
+from Scripts import findEmails, searchGoogleScript
+import Decorators.timer
+import Decorators.Write_Log
+from Scripts.searchGoogleScript import *
 
 def runScrips(keyword,numberOfLinks,link_file, emailFile):
     # Start Seaching On Google
-    searchGoogleScript.searchGoogle(keyword,numberOfLinks,link_file)
+    searchGoogleScript.searchGoogle(keyword, numberOfLinks, link_file)
     # Count the Starting Amount of Emails
     # New Emails
     email_counter = 0
@@ -17,7 +19,7 @@ def runScrips(keyword,numberOfLinks,link_file, emailFile):
     # Run findEmails per Link Found
     try:
         print("Getting Emails From Links!")
-        findEmails.findEmails(emailFile,link_file)
+        findEmails.findEmails(emailFile, link_file)
         print("Emails Found and Saved To File:",emailFile)
         with open(emailFile,"r") as file:
             lines = file.readlines()
@@ -27,11 +29,14 @@ def runScrips(keyword,numberOfLinks,link_file, emailFile):
         print("Total Emails:", email_counter)
     except:
         print("Cant Access File")
+@Decorators.timer.timer_decorator
 def runIt():
-    with open("searchTags.txt","r") as file:
+
+    with open("Search Tags/searchTags.txt", "r") as file:
         for tag in file.readlines():
             tag = tag.strip("\n")
-            runScrips(tag,10,"Links/"+tag+"-Links.txt","Emails/"+tag+"-Emails.txt")
+            runScrips(tag,1,"Links/"+tag+"-Links.txt","Emails/"+tag+"-Emails.txt")
+    Decorators.Write_Log.writeLog(tag,returnResults, 10)
 
 
 runIt()
