@@ -11,3 +11,5 @@ twitter
 nasdaq
 forbes
 bloomberg
+https://www.oracle.com/
+wikihow

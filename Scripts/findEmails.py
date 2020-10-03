@@ -4,6 +4,9 @@ import re
 import html.parser
 import gc
 import time
+
+
+
 def findEmails(emailfile,link_file):
     #File to save Email
     file_name = emailfile

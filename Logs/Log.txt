@@ -1,0 +1,6 @@
+2020-10-03 11:04:59.689081 - A Search was Made For: CRM. Total Result: 60. Time Elapsed: 10
+2020-10-03 11:05:37.946281 - A Search was Made For: CRM. Total Result: <function returnResults at 0x04268C88>. Time Elapsed: 10
+2020-10-03 11:05:54.919704 - A Search was Made For: CRM. Total Result: <function returnResults at 0x03D59C88>. Time Elapsed: 10
+2020-10-03 11:18:25.796605 - A Search was Made For: CRM. Total Result: <function linkArraySorted at 0x03DB5C88>. Time Elapsed: 10
+2020-10-03 11:27:42.492451 - A Search was Made For: CRM. Total Result: []. Time Elapsed: 10
+2020-10-03 11:29:07.016779 - A Search was Made For: CRM. Total Result: 0. Time Elapsed: 10

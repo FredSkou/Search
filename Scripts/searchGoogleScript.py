@@ -1,8 +1,16 @@
 import googlesearch
+import Decorators.Write_Log
+import Decorators.Estimate
+
 #import google
 #Google Has To Be Imported and then removed again
+
+
+
 def searchGoogle(searchPhrase,hits,linkfile):
+    # Where to save the Links.
     file_name = linkfile
+    # Filter words from the Filter.txt file
     filterArray = []
     # Link List to remove Duplicates:
     linkArray = []
@@ -35,11 +43,13 @@ def searchGoogle(searchPhrase,hits,linkfile):
                 contact = entry_short + "contact"
                 contact_us = entry_short + "contact-us"
                 contact_Html = contactus + ".html"
+                aboutus = entry_short + "/about/contactus.html"
                 linkArray.append(entry_short + "\n")
                 linkArray.append(contactus + "\n")
                 linkArray.append(contact + "\n")
                 linkArray.append(contact_us + "\n")
                 linkArray.append(contact_Html + "\n")
+                linkArray.append(aboutus)
             elif ".dk" in entry:
                 entry = str(entry.split(".dk")[0])
                 entry_short = entry + ".dk/"
@@ -58,12 +68,14 @@ def searchGoogle(searchPhrase,hits,linkfile):
 
     else:
         print("No Results")
-    print("Search Complete! Results: ",len(linkArraySorted))
-    returnResults(linkArraySorted)
-    return len(linkArraySorted)
+    try:
+        print("Search Complete! Results: ",len(linkArraySorted))
+        Decorators.Write_Log.saveResults(len(linkArraySorted),"Logs/Results.txt")
+        #Decorators.Estimate.estimate(len(linkArraySorted))
+    except:
+        pass
 
-def returnResults(array):
-    results = len(array)
-    return results
+
+
 
 

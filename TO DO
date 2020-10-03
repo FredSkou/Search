@@ -8,7 +8,6 @@ Make it so you can search on just 1 URL - Mostly For The Future.
 Make a new Script that takes Links it finds and then looks for emails and links there and then uses those links etc. etc....
 Make it more high coupling - low cohesion.
 More methods, less long scripts.
-Set up my decorators - Timer(For Test), Log(And Maybe DateTime)
 Test if Generators would be faster
 Get a better way of identifying Emails, @ is not good enough
 
@@ -17,6 +16,7 @@ Get a better way of identifying Emails, @ is not good enough
 
 
 DONE THINGS:
+DONE - Set up my decorators - Timer(For Test), Log(And Maybe DateTime)
 DONE - Make broken links save to another file and then we add those files to the filter check in findEmails.
 DONE - Make it so that runScripts takes an array
 DONE - Make it so findEmails() accepts the whole file, instead of having to call it multiple times from runScripts. DONE

@@ -2,6 +2,7 @@ from Scripts import findEmails, searchGoogleScript
 import Decorators.timer
 import Decorators.Write_Log
 from Scripts.searchGoogleScript import *
+import Decorators.Estimate
 
 def runScrips(keyword,numberOfLinks,link_file, emailFile):
     # Start Seaching On Google
@@ -30,13 +31,16 @@ def runScrips(keyword,numberOfLinks,link_file, emailFile):
     except:
         print("Cant Access File")
 @Decorators.timer.timer_decorator
-def runIt():
-
+def runIt(hits):
+    tags = []
     with open("Search Tags/searchTags.txt", "r") as file:
         for tag in file.readlines():
             tag = tag.strip("\n")
-            runScrips(tag,1,"Links/"+tag+"-Links.txt","Emails/"+tag+"-Emails.txt")
-    Decorators.Write_Log.writeLog(tag,returnResults, 10)
+            tags.append(tag)
+    Decorators.Estimate.estimate(len(tags),hits)
+    for tag in tags:
+        runScrips(tag,hits,"Links/"+tag+"-links.txt","Emails/"+tag+"-Emails.txt")
+    Decorators.Write_Log.writeSearchLoPart1(tags,"Logs/SearchLog.txt")
 
-
-runIt()
+for i in range(1):
+    runIt(40)
