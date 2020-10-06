@@ -18,11 +18,11 @@ def estimate(amount_of_tags,amount_of_hits):
     try:
         average_time = (sum(total_time)/len(total_time))
         average_results = (sum(total_links)/len(total_links))
-        averagetimeperlink = round(average_time/average_results)
-        estimate =  round(averagetimeperlink*adjustedhits,1)
+        averagetimeperlink = round(average_time/average_results,1)
+        estimate =  round(averagetimeperlink*adjustedhits,1)*amount_of_tags
         print("Estimated Time Per Link:", averagetimeperlink,"Total time Estimated Time:",estimate)
     except:
-        pass
+        print("No Estimate Available!")
 
 
 
