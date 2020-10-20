@@ -33,7 +33,6 @@ def runScrips(keyword,numberOfLinks,link_file, emailFile):
         print("Cant Access File")
 @Decorators.timer.timer_decorator
 def runIt(hits):
-    Scripts.cleanup.cleanLogs()
     with open("Search Tags/searchTags.txt", "r") as file:
         tags = [tag.strip("\n") for tag in file.readlines()]
 
@@ -41,6 +40,7 @@ def runIt(hits):
     for tag in tags:
         runScrips(tag,hits,"Links/"+tag+"-links.txt","Emails/"+tag+"-Emails.txt")
     Decorators.Write_Log.writeSearchLoPart1(tags,"Logs/SearchLog.txt")
+    Scripts.cleanup.cleanLogs()
 
 for i in range(1):
-    runIt(20)
+    runIt(1)

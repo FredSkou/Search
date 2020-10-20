@@ -1,9 +1,8 @@
-
-
+import pathlib
 # The Absulute Path, We Can Most Likely Set this to what we need when we use it in our other projects
-projectPath = "C:/Users/Bruger/Desktop/PySearch/"
-timepath = projectPath+"Logs/Time.txt"
-resultspath = projectPath+"Logs/Results.txt"
+projectPath = str(pathlib.Path().absolute())
+timepath = projectPath+"/Logs/Time.txt"
+resultspath = projectPath+"/Logs/Results.txt"
 
 def cleanLogs():
 
